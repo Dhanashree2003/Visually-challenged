@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>western</title>
+    <link rel="stylesheet" href="boycasual.css" />
+    <audio id="audio" src="audio/boys western.mp3"></audio>
+    <audio id="wrong" src="audio/valid num.mp3"></audio>
+    <audio id="crt" src="audio/enter correct option.mp3"></audio>
+</head>
+
+<body>
+    <header>
+        <img src="img/logo.png" src="logo" />
+        <nav>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="boy.html">Men</a></li>
+            <li><a href="grl.html">Women</a></li>
+        </nav>
+    </header>
+    <div class="main">
+        <div class="sub">
+            <h1>western wear</h1>
+            <div class="dis">
+                <a href="western desc 1.html">
+                    <div class="box"><img src="boys/western boy1/western boy1.jpg">
+                        <h3>Lavender Hoody</h3>
+                    </div>
+                </a>
+                <a href="western desc2.html">
+                    <div class="box"><img src="boys/western boy2/western boy2.jpg">
+                        <h3>T-Shirt</h3>
+                    </div>
+                </a>
+                <a href="western desc3.html">
+
+                    <div class="box"><img src="boys/western boy3/western boy3.jpg">
+                        <h3>Grey Hoody</h3>
+                    </div>
+                </a>
+                <a href="western desc4.html">
+                    <div class="box"><img src="boys/western boy4/western boy4.jpg">
+                        <h3>Black Hoody</h3>
+                    </div>
+                </a>
+                <a href="western desc5.html">
+                    <div class="box"><img src="boys/western boy5/western boy5.jpg">
+                        <h3>Printed Shirt</h3>
+                    </div>
+                </a>
+                <a href="western desc6.html">
+                    <div class="box"><img src="boys/western boy6/western 6.jpg">
+                        <h3>Jeans Set</h3>
+                    </div>
+                </a>
+                <a href="western desc7.html">
+                    <div class="box"><img src="boys/western boy7/western 7.jpg">
+                        <h3>Blazer and Shirt combo</h3>
+                    </div>
+                </a>
+
+                <a href="western desc8.html">
+                    <div class="box"><img src="boys/western boy8/western 8.jpg">
+                        <h3>Jeans</h3>
+                    </div>
+                </a>
+
+
+
+            </div>
+            <form>
+                <input type="text" placeholder="Enter Choice" id="input" > 
+                  <button type="button" id="bu" class="btn" onclick="check()" onload="play();">Enter</button>
+                </form>
+              </div>
+            </div>
+            <script>
+                   /*** key press**/
+            var input = document.getElementById("input");
+         input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          document.getElementById("bu").click();
+        }
+      });
+      /**playing  audio**/
+      function play() {
+             console.log("hello")
+             var audio = document.getElementById("audio");
+              audio.play();
+            }
+      
+            /***first time audio***/
+      const media = document.querySelector('audio');
+      function startPlayback() {
+        media.play()
+          .then(() => console.log('Playback started successfully.'))
+          .catch(error => console.error('Failed to start playback:', error));
+      
+        document.removeEventListener('click', startPlayback);
+      }
+      document.addEventListener('click', startPlayback);
+      
+      /***check**/
+      function check(){
+              var val=document.getElementById("input").value;
+              console.log(val)
+              if(isNaN(val)){
+                var au=document.getElementById("wrong")
+                au.load();
+              au.play();
+              document.getElementById("input").value=""
+              }
+              else if(val=="1")
+              {
+                 window.location.href = "western desc 1.html";
+                 document.getElementById("input").value=""
+              }
+              else if(val=="2")
+              {
+                window.location.href = "western desc2.html";
+                document.getElementById("input").value=""
+              }
+              else if(val=="3"){
+                document.getElementById("input").value=""
+                 window.location.href = "western desc3.html"
+              }
+              else if(val=="4"){
+                document.getElementById("input").value=""
+                 window.location.href = "western desc4.html"
+              }
+              else if(val=="5"){
+                document.getElementById("input").value=""
+                 window.location.href = "western desc5.html"
+              }
+              else if(val=="6"){
+                document.getElementById("input").value=""
+                 window.location.href = "western desc6.html"
+              }
+              else if(val=="7"){
+                document.getElementById("input").value=""
+                 window.location.href = "western desc7.html"
+              }
+              else if(val=="8"){
+                document.getElementById("input").value=""
+                 window.location.href = "western desc8.html"
+              }
+              else if(val=='9')
+              {
+                document.getElementById("input").value=""
+                 window.location.href = "boy.html"
+              }
+              else if(val=='0'){
+                play()
+                document.getElementById("input").value=""
+              }
+              else{
+                var au=document.getElementById("crt")
+                au.load();
+              au.play();
+              document.getElementById("input").value=""
+              }
+              
+            }
+            </script>
+</body>
+
+</html>

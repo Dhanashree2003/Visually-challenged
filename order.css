@@ -1,0 +1,105 @@
+body{
+    background-color:antiquewhite;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'poppins',sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+  }
+header img{
+    width: 90px;
+}
+header{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+nav{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+li{
+    margin: 10px 20px;
+    
+}
+li a{
+    text-decoration: none;
+    color: brown;
+    font-weight: 750;
+    font-size: 20px;
+}
+.btn{
+    position:absolute;
+    display: block;
+    margin: 25px auto;
+    width: fit-content;
+    margin-left: 35%;
+    border: 1px solid #e1e1e1;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    background-color:brown;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+}
+::placeholder {
+    color:rgb(255, 255, 255);
+    opacity: 1; /* Firefox */
+}
+#contact{
+    width: 100%;
+   }
+   form{
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-top: 10%;
+   }
+   .h{
+       margin-left: 40%;
+       font-size: 50px;
+       font-weight: 1000px;
+       margin-right: 25%;
+       animation: color-change 1s infinite;
+   }
+   @keyframes color-change{
+       50% {color: rgb(203, 194, 194);}
+       50% {color:#dd4f24}
+   }
+   
+   form input,form textarea{
+       width: 100%;
+       border: 0;
+       outline: none;
+       padding: 15px;
+       margin: 15px 0;
+       background-color: #dd6d6d;
+       color:#fff;
+       font-size: 18px;
+       border-radius: 6px;
+   }
+   
+   .copy{
+       width: 100%;
+       text-align: center;
+       padding: 25px 0;
+       margin-top: 100%;
+       background-color:#db6f6f;
+       font-weight: 300;
+       color: #fff;
+       margin-top: 15%;
+   }
+   #msg{
+       margin-left:500px;
+       color:#61b752;
+       display: block;
+   }

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lehenga dress</title>
+    <link rel="stylesheet" href="dress.css" />
+    <audio id="audio" src="audio/g len 7.mp3"></audio>
+    <audio id="wrong" src="audio/valid num.mp3"></audio>
+    <audio id="crt" src="audio/enter correct option.mp3"></audio>
+  </head>
+  <body>
+    <header>
+      <img src="img/logo.png" src="logo" />
+      <nav>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="boy.html">Men</a></li>
+        <li><a href="grl.html">Women</a></li>
+      </nav>
+    </header>
+    <div class="dis">
+      <h1>Rani Pink Leaf Daman Lehenga</h1>
+      <img src="girl/len/7 red lehanga.webp" />
+      <ul>
+        <h3>Details</h3>
+        <h3>Blouse</h3>
+        <li>Fabric - Georgette</li>
+        <li>Ornamentation- Sequin Work</li>
+        <li>Colour - Pink</li>
+        <li>Neck - Sweetheart Neck</li>
+        <li>Sleeves - Half Sleeves</li>
+        <h3>Lehenga</h3>
+        <li>Fabric - Georgette</li>
+        <li>Closure - Elasticated</li>
+        <li>Length - Ankle length</li>
+        <h3>Dupatta</h3>
+        <li>Fabric - Net</li>
+      </ul>
+      <h3>Description</h3>
+      <p>
+        This stunning rani pink lehenga outfit is ideal for use at parties and festivals, both during the day and at night. A rich border of sequin embroidery makes the lehenga more elegant. The blouse features the same embroidered pattern all over. The blouse boasts sweetheart detailing at the neckline and features half sleeves. A rani pink net dupatta is included with this ensemble as an accessory. The dupatta is laced on all four of its borders and features delicate sequin embroidery all over its surface.
+      </p>
+      <form>
+        <input type="text" placeholder="Enter Choice" id="input" > 
+          <button type="button" id="bu" class="btn" onclick="check()" onload="play();">Enter</button>
+        </form>
+        <script>
+          /*** key press**/
+      var input = document.getElementById("input");
+   input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("bu").click();
+  }
+});
+/**playing  audio**/
+function play() {
+       console.log("hello")
+       var audio = document.getElementById("audio");
+        audio.play();
+      }
+
+      /***first time audio***/
+const media = document.querySelector('audio');
+function startPlayback() {
+  media.play()
+    .then(() => console.log('Playback started successfully.'))
+    .catch(error => console.error('Failed to start playback:', error));
+
+  document.removeEventListener('click', startPlayback);
+}
+document.addEventListener('click', startPlayback);
+/***check***/
+function check(){
+        var val=document.getElementById("input").value;
+        console.log(val)
+        if(isNaN(val)){
+          var au=document.getElementById("wrong")
+          au.load();
+        au.play();
+        document.getElementById("input").value=""
+        }
+        else if(val=="1")
+        {
+           window.location.href = "order.html";
+           document.getElementById("input").value=""
+        }
+        else if(val=='9')
+        {
+          document.getElementById("input").value=""
+           window.location.href = "grllehenga.html"
+        }
+        else if(val=='0'){
+          play()
+          document.getElementById("input").value=""
+        }
+        else{
+          var au=document.getElementById("crt")
+          au.load();
+        au.play();
+        document.getElementById("input").value=""
+        }
+      }
+        </script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+body{
+    background-color:antiquewhite;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'poppins',sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+  }
+header img{
+    width: 90px;
+}
+header{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+nav{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+li{
+    margin: 10px 20px;
+    
+}
+li a{
+    text-decoration: none;
+    color: brown;
+    font-weight: 750;
+    font-size: 20px;
+}
+::placeholder {
+    color:brown;
+    opacity: 1; /* Firefox */
+}
+.dis h1{
+
+    text-align: center;
+    color: brown;
+    font-size: 30px;
+    font-weight: 600;
+}
+.dis img{
+    height: 650px;
+    width: 500px;
+    margin-left: 33%;
+    margin-top: 80px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px 10px pink;
+}
+.dis ul{
+    margin-top: 50px;
+    margin-left: 33%;
+}
+.dis h3{
+    font-size: 30px;
+    color: orangered;
+    margin-left: 33%;
+    margin-top: 50px;
+}
+.dis p{
+    margin-left: 33%;
+    margin-top: 50px;
+    width: 700px;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+.dis ul h3{
+    margin-left: 0px;
+    font-size: 30px;
+    color: orangered;
+}
+.dis ul li{
+    list-style: none;
+    font-size: 20px;
+}
+.dis input{
+    margin-left: 25%;
+    text-align: center;
+    width: 50%;
+    padding: 15px 20px;
+    background-color: #ee994a;
+    color:#fff;
+    border: none;
+    font-size: 18px;
+    border-radius: 10px;
+}
+.btn{
+    position:absolute;
+    display: block;
+    margin: 25px auto;
+    width: fit-content;
+    margin-left: 45%;
+    border: 1px solid #e1e1e1;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    background-color:brown;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+}

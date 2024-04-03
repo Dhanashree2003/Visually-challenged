@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>western Wear</title>
+    <link rel="stylesheet" href="dress.css" />
+    <audio id="audio" src="audio/b wes 6.mp3"></audio>
+    <audio id="wrong" src="audio/valid num.mp3"></audio>
+    <audio id="crt" src="audio/enter correct option.mp3"></audio>
+</head>
+
+<body>
+    <header>
+        <img src="img/logo.png" src="logo" />
+        <nav>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="boy.html">Men</a></li>
+            <li><a href="grl.html">Women</a></li>
+        </nav>
+    </header>
+    <div class="dis">
+        <h1>Jeans Set</h1>
+        <img src="boys/western boy6/western 6.jpg" />
+        <ul>
+            <h3>Details</h3>
+            <li>Style name:Western jean and shirt</li>
+            <li> colour:Grey Shade</li>
+            <li>Fit type:Slim</li>
+            <li>Care Instructions</li>
+            <li>Made with durable material these jeans are build to last and allow you to move with comfort throughout the day</li>
+        </ul>
+        <form>
+            <input type="text" placeholder="Enter Choice" id="input" > 
+              <button type="button" id="bu" class="btn" onclick="check()" onload="play();">Enter</button>
+            </form>
+            <script>
+              /*** key press**/
+          var input = document.getElementById("input");
+       input.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("bu").click();
+      }
+    });
+    /**playing  audio**/
+    function play() {
+           console.log("hello")
+           var audio = document.getElementById("audio");
+            audio.play();
+          }
+    
+          /***first time audio***/
+    const media = document.querySelector('audio');
+    function startPlayback() {
+      media.play()
+        .then(() => console.log('Playback started successfully.'))
+        .catch(error => console.error('Failed to start playback:', error));
+    
+      document.removeEventListener('click', startPlayback);
+    }
+    document.addEventListener('click', startPlayback);
+    /***check***/
+    function check(){
+            var val=document.getElementById("input").value;
+            console.log(val)
+            if(isNaN(val)){
+              var au=document.getElementById("wrong")
+              au.load();
+            au.play();
+            document.getElementById("input").value=""
+            }
+            else if(val=="1")
+            {
+               window.location.href = "order.html";
+               document.getElementById("input").value=""
+            }
+            else if(val=='9')
+            {
+              document.getElementById("input").value=""
+               window.location.href = "Western.html"
+            }
+            else if(val=='0'){
+              play()
+              document.getElementById("input").value=""
+            }
+            else{
+              var au=document.getElementById("crt")
+              au.load();
+            au.play();
+            document.getElementById("input").value=""
+            }
+          }
+            </script>
+        </div>
+
+    </div>
+</body>
+
+</html>

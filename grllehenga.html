@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lehenga</title>
+    <link rel="stylesheet" href="grllehenga.css" />
+    <audio id="audio" src="audio/girl len page.mp3"></audio>
+    <audio id="wrong" src="audio/valid num.mp3"></audio>
+    <audio id="crt" src="audio/enter correct option.mp3"></audio>
+  </head>
+  <body>
+    <header>
+      <img src="img/logo.png" src="logo" />
+      <nav>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="boy.html">Men</a></li>
+        <li><a href="grl.html">Women</a></li>
+      </nav>
+    </header>
+      <div class="main">
+        <div class="sub">
+          <h1>lehenga</h1>
+          <div class="dis">
+            <a href="g len 1.html"> <div class="box"><img src="girl/len/1 pink lehenga.webp">
+              <h3>Rani Pink Lehenga</h3></div></a>
+            <a href="g len2.html"><div class="box"><img src="girl/len/2 blue lehenga.webp">
+              <h3>Mint Green Lehenga</h3></div></a>
+            <a href="g len 3.html"><div class="box"><img src="girl/len/3 dark green lehenga.webp">
+              <h3>Bottle Green Cape Lehenga Choli</h3></div></a>
+
+<a href="g len 4.html"><div class="box"><img src="girl/len/4 merun lehenga.webp">
+  <h3>Maroon Lehenga</h3></div></a>
+<a href="g len 5.html"><div class="box"><img src="girl/len/5 orange lehenga.webp">
+  <h3>Bright Orange Lehenga Set</h3></div></a>
+  <a href="g len 6.html"><div class="box"><img src="girl/len/6 purple lehenga.webp"><h3>Lavender Thread Work Lehenga
+  </h3></div></a>
+  <a href="g len 7.html"><div class="box"><img src="girl/len/7 red lehanga.webp"><h3>Rani Pink Leaf Daman Lehenga
+  </h3></div></a>
+  <a href="g len 8.html"><div class="box"><img src="girl/len/8 yelloe lehenga.webp"><h3>Yellow Lehenga Choli
+  </h3></div></a>
+ 
+      </div>
+      <form>
+        <input type="text" placeholder="Enter Choice" id="input" > 
+          <button type="button" id="bu" class="btn" onclick="check()" onload="play();">Enter</button>
+        </form>
+      </div>
+    </div>
+    <script>
+           /*** key press**/
+    var input = document.getElementById("input");
+ input.addEventListener("keypress", function(event) {
+if (event.key === "Enter") {
+  event.preventDefault();
+  document.getElementById("bu").click();
+}
+});
+/**playing  audio**/
+function play() {
+     console.log("hello")
+     var audio = document.getElementById("audio");
+      audio.play();
+    }
+
+    /***first time audio***/
+const media = document.querySelector('audio');
+function startPlayback() {
+media.play()
+  .then(() => console.log('Playback started successfully.'))
+  .catch(error => console.error('Failed to start playback:', error));
+
+document.removeEventListener('click', startPlayback);
+}
+document.addEventListener('click', startPlayback);
+
+/***check**/
+function check(){
+      var val=document.getElementById("input").value;
+      console.log(val)
+      if(isNaN(val)){
+        var au=document.getElementById("wrong")
+        au.load();
+      au.play();
+      document.getElementById("input").value=""
+      }
+      else if(val=="1")
+      {
+         window.location.href = "g len 1.html";
+         document.getElementById("input").value=""
+      }
+      else if(val=="2")
+      {
+        window.location.href = "g len2.html";
+        document.getElementById("input").value=""
+      }
+      else if(val=="3"){
+        document.getElementById("input").value=""
+         window.location.href = "g len 3.html"
+      }
+      else if(val=="4"){
+        document.getElementById("input").value=""
+         window.location.href = "g len 4.html"
+      }
+      else if(val=="5"){
+        document.getElementById("input").value=""
+         window.location.href = "g len 5.html"
+      }
+      else if(val=="6"){
+        document.getElementById("input").value=""
+         window.location.href = "g len 6.html"
+      }
+      else if(val=="7"){
+        document.getElementById("input").value=""
+         window.location.href = "g len 7.html"
+      }
+      else if(val=="8"){
+        document.getElementById("input").value=""
+         window.location.href = "g len 8.html"
+      }
+      else if(val=='9')
+      {
+        document.getElementById("input").value=""
+         window.location.href = "grl.html"
+      }
+      else if(val=='0'){
+        play()
+        document.getElementById("input").value=""
+      }
+      else{
+        var au=document.getElementById("crt")
+        au.load();
+      au.play();
+      document.getElementById("input").value=""
+      }
+      
+    }
+    </script>
+  </body>
+</html>

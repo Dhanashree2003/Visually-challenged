@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ethnic dress</title>
+    <link rel="stylesheet" href="dress.css">
+    <audio id="audio" src="audio/g ele 3.mp3"></audio>
+    <audio id="wrong" src="audio/valid num.mp3"></audio>
+    <audio id="crt" src="audio/enter correct option.mp3"></audio>
+  </head>
+  <body>
+    <header>
+        <img src="img/logo.png" src="logo">
+        <nav>
+             <li><a href="index.html">Home</a></li>
+             <li><a href="boy.html">Men</a></li>
+             <li><a href="grl.html">Women</a></li>
+        </nav>
+       </header>
+       <div class="dis">
+        <h1>Blue Paplum Thread Work Pallazo</h1>
+        <img src="girl/eth/girl ethnic1.webp">
+        <ul>
+          <h3>Details</h3>
+          <h3>Kurta</h3>
+          <li>Fabric - Georgette</li>
+          <li>Ornamentation- Thread work</li>
+           <li>Colour - Blue</li> 
+            <li>Length - Peplum Top</li>
+           <li>Neck - Sweetheart Neck</li> 
+            <li>Sleeves- Sleeveless</li>
+            <h3>Pants</h3>
+            <li>Fabric- Georgette
+                </li>
+            <li>Closure- Elasticated
+                </li>
+            <li>Length- Ankle length</li>
+            <h3>Dupatta</h3>
+             <li>Fabric- Georgette</li>
+            
+        </ul>
+        <h3>Description</h3>
+        <p>A blue peplum palazzo set with thread embroidery is all you need for any type of day or night celebration. It is composed of a peplum top, palazzo trousers, and a matching dupatta made of Georgette. It is complemented by a thread and sequin embroidery in a variety of pastel hues, including peach, pink, blue, yellow, and gold. This threadwork is so subtle that it perfectly compliments the outfit's style and color.
+        </p>
+        <form>
+          <input type="text" placeholder="Enter Choice" id="input" > 
+            <button type="button" id="bu" class="btn" onclick="check()" onload="play();">Enter</button>
+          </form>
+       </div>
+       <script>
+        /*** key press**/
+    var input = document.getElementById("input");
+ input.addEventListener("keypress", function(event) {
+if (event.key === "Enter") {
+  event.preventDefault();
+  document.getElementById("bu").click();
+}
+});
+/**playing  audio**/
+function play() {
+     console.log("hello")
+     var audio = document.getElementById("audio");
+      audio.play();
+    }
+
+    /***first time audio***/
+const media = document.querySelector('audio');
+function startPlayback() {
+media.play()
+  .then(() => console.log('Playback started successfully.'))
+  .catch(error => console.error('Failed to start playback:', error));
+
+document.removeEventListener('click', startPlayback);
+}
+document.addEventListener('click', startPlayback);
+/***check***/
+function check(){
+      var val=document.getElementById("input").value;
+      console.log(val)
+      if(isNaN(val)){
+        var au=document.getElementById("wrong")
+        au.load();
+      au.play();
+      document.getElementById("input").value=""
+      }
+      else if(val=="1")
+      {
+         window.location.href = "order.html";
+         document.getElementById("input").value=""
+      }
+      else if(val=='9')
+      {
+        document.getElementById("input").value=""
+         window.location.href = "grlethnic.html"
+      }
+      else if(val=='0'){
+        play()
+        document.getElementById("input").value=""
+      }
+      else{
+        var au=document.getElementById("crt")
+        au.load();
+      au.play();
+      document.getElementById("input").value=""
+      }
+      
+    }
+      </script>
+    </body>
+    </html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Now</title>
+    <link rel="stylesheet" href="order.css">
+    <audio id="audio" src="audio/order.mp3"></audio>
+    <audio id="succ" src="audio/order success.mp3"></audio>
+    <audio id="wrong" src="audio/valid num.mp3"></audio>
+    <audio id="crt" src="audio/enter correct option.mp3"></audio>
+  </head>
+  <body>
+    <header>
+        <img src="img/logo.png" src="logo">
+        <nav>
+             <li><a href="index.html">Home</a></li>
+             <li><a href="boy.html">Men</a></li>
+             <li><a href="grl.html">Women</a></li>
+        </nav>
+       </header>
+       <div class="contact">
+        <h1 class="h">
+            Order Now
+        </h1>
+        <form name="submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="Your Name" required>
+            <input type="text" name="Email" placeholder="Your Mobile number" required>
+            <textarea name="Message" rows="10" placeholder="payment proof and Address" id="input"></textarea>
+            <button type="submit" class="btn" onclick="data()" id="bu">Place Order</button>
+            <span id="msg"></span>
+        </form>
+        <script>
+          function data(){
+            const scriptURL = 'https://script.google.com/macros/s/AKfycby_lCUIK0aWFitB9eR7DMzg8I1x6ptjfNKVd-SbkdTaZWipB46XpkGSMShGxRtd1f6A/exec'
+          const form = document.forms['submit-to-google-sheet']
+          const msg=document.getElementById("msg")
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML="Order Placed Successfully"
+
+                    setTimeout(function(){
+                        msg.innerHTML=""
+                    },5000)
+                    form.reset()
+                    success()
+                })
+            
+                .catch(error => console.error('Error!'))
+            })
+          }
+
+          /*** key press**/
+      var input = document.getElementById("input");
+   input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("bu").click();
+  }
+});
+/**playing  audio**/
+function play() {
+       console.log("hello")
+       var audio = document.getElementById("audio");
+        audio.play();
+      }
+      function success() {
+       console.log("hello")
+       var audio = document.getElementById("succ");
+        audio.play();
+      }
+
+      /***first time audio***/
+const media = document.querySelector('audio');
+function startPlayback() {
+  media.play()
+    .then(() => console.log('Playback started successfully.'))
+    .catch(error => console.error('Failed to start playback:', error));
+
+  document.removeEventListener('click', startPlayback);
+}
+document.addEventListener('click', startPlayback);
+          </script>
+    </div>
+  </body>
+</html>
